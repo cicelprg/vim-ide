@@ -1,19 +1,18 @@
-" by qucaihui
-" @date 2014-09-29
 let mapleader=','
 
 " don't bother with vi compatibility
 set nocompatible
+set ignorecase
 
 " vundle {{{
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-filetype off 
+filetype off
 if has("unix")
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
 else
     set rtp+=$VIM/vimfiles/bundle/vundle/
-    call vundle#rc('$VIM/vimfiles/bundle/')  
+    call vundle#rc('$VIM/vimfiles/bundle/')
 endif
 
 Bundle 'gmarik/vundle'
@@ -31,9 +30,29 @@ nnoremap <leader>// :TComment<CR>
 vnoremap <leader>// :TComment<CR>
 
 Bundle 'PDV--phpDocumentor-for-Vim'
-inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-D> :call PhpDocSingle()<CR> 
+inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-D> :call PhpDocSingle()<CR>
 vnoremap <C-D> :call PhpDocRange()<CR>
+
+"Bundle "scrooloose/nerdcommenter"
+
+Bundle "vim-scripts/DoxygenToolkit.vim"
+nnoremap <leader>ll :DoxLic<CR>
+vnoremap <leader>ll :DoxLic<CR>
+nnoremap <leader>cc :Dox<CR>
+vnoremap <leader>cc :Dox<CR>
+nnoremap <leader>aa :DoxAuthor<CR>
+vnoremap <leader>aa :DoxAuthor<CR>
+
+Bundle 'AutoComplPop'
+
+Bundle 'OmniCppComplete'
+"set completeopt=menu,menuone
+"let OmniCpp_MayCompleteDot=1 "打开. 操作符
+"let OmniCpp_MayCompleteArrow=1
+"let OmniCpp_MayCompleteScope=1
+"let OmniCpp_SelectFirstItem=2 "自动弹出时自动跳至第一个
+
 
 Bundle "Mark--Karkat"
 " <leader>m, <leader>n
@@ -47,17 +66,17 @@ Bundle 'bling/vim-airline'
 " map <Leader>bn :bn<cr>
 " map <Leader>bp :bp<cr>
 " map <Leader>bd :bd<cr>
-" 
+"
 " let g:airline#extensions#tabline#enabled = 1
-" 
+"
 " let g:airline#extensions#tabline#tab_min_count = 2
 " let g:airline#extensions#tabline#buffer_min_count = 2
-" 
+"
 " " let g:airline#extensions#tabline#left_sep = ' '
 " " let g:airline#extensions#tabline#left_alt_sep = '>'
 " " let g:airline#extensions#tabline#fnamemod = ':p:.'
 " let g:airline#extensions#tabline#formatter = 'unique_tail'
-" 
+"
 " let g:airline#extensions#tabline#buffer_idx_mode = 1
 " nmap <leader>1 <Plug>AirlineSelectTab1
 " nmap <leader>2 <Plug>AirlineSelectTab2
@@ -238,6 +257,12 @@ set guioptions-=L
 " set completeopt=longest,menu
 set completeopt-=preview
 
+" hi Pmenu ctermbg=white ctermfg=red
+" "hi Pmenu ctermbg=green ctermfg=blue
+" hi PmenuSel ctermbg=red ctermfg=white
+" hi Search term=standout ctermfg=0 ctermbg=3 guifg=Black guibg=Yellow
+" "hi Search term=reverse cterm=reverse ctermfg=14 ctermbg=0 gui=bold,reverse
+"
 " set lines=999
 " set columns=9999
 
@@ -280,5 +305,8 @@ if has("gui_running")
     language messages zh_cn.utf-8
     set gfn=Monaco:h12
 endif
+
+set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%] "显示文件名：总行数，总的字符数"
+set ruler "在编辑过程中，在右下角显示光标位置的状态行"
 
 " vim600: sw=4 ts=4 fdm=marker syn=vim
