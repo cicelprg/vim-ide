@@ -53,6 +53,17 @@ Bundle 'OmniCppComplete'
 "let OmniCpp_MayCompleteScope=1
 "let OmniCpp_SelectFirstItem=2 "自动弹出时自动跳至第一个
 
+"for Apollo
+Bundle "rhysd/vim-clang-format"
+let g:clang_format#style_options = {
+    \ "BasedOnStyle": "Google",
+    \ "Language": "Cpp",
+    \ "Cpp11BracedListStyle": "true",
+    \ "Standard": "Cpp11",
+    \ "CommentPragmas" : "^ NOLINT"}
+
+" map to <Leader>ff in C++ code
+vnoremap <Leader>ff :ClangFormat<CR>
 
 Bundle "Mark--Karkat"
 " <leader>m, <leader>n
@@ -232,9 +243,9 @@ set hlsearch
 " set incsearch
 
 " tab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 
 " indent
