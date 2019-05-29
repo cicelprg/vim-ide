@@ -53,17 +53,6 @@ Bundle 'OmniCppComplete'
 "let OmniCpp_MayCompleteScope=1
 "let OmniCpp_SelectFirstItem=2 "自动弹出时自动跳至第一个
 
-"for Apollo
-Bundle "rhysd/vim-clang-format"
-let g:clang_format#style_options = {
-    \ "BasedOnStyle": "Google",
-    \ "Language": "Cpp",
-    \ "Cpp11BracedListStyle": "true",
-    \ "Standard": "Cpp11",
-    \ "CommentPragmas" : "^ NOLINT"}
-
-" map to <Leader>ff in C++ code
-vnoremap <Leader>ff :ClangFormat<CR>
 
 Bundle "Mark--Karkat"
 " <leader>m, <leader>n
@@ -109,7 +98,7 @@ Bundle "tpope/vim-surround"
 Bundle 'ervandew/supertab'
 
 " can't use brew python, macvim signal ABRT
-" Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 " YCM 补全菜单配色
 " 菜单
 " highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
@@ -128,7 +117,7 @@ Bundle 'ervandew/supertab'
 " set completeopt-=preview
 
 " syntax check
-" Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
@@ -165,6 +154,17 @@ colorscheme solarized
 " colorscheme desert
 set background=dark
 let g:solarized_termtrans=1
+
+Bundle "rhysd/vim-clang-format"
+let g:clang_format#style_options = {
+    \ "BasedOnStyle": "Google",
+    \ "Language": "Cpp",
+    \ "Cpp11BracedListStyle": "true",
+    \ "Standard": "Cpp11",
+    \ "CommentPragmas" : "^ NOLINT"}
+
+" map to <Leader>ff in C++ code
+vnoremap <Leader>ff :ClangFormat<CR>
 
 " Bundle 'fholgado/minibufexpl.vim'
 " " 显示/隐藏 MiniBufExplorer 窗口
