@@ -44,14 +44,18 @@ vnoremap <leader>cc :Dox<CR>
 nnoremap <leader>aa :DoxAuthor<CR>
 vnoremap <leader>aa :DoxAuthor<CR>
 
-Bundle 'AutoComplPop'
+" Bundle 'AutoComplPop'
 
-Bundle 'OmniCppComplete'
-"set completeopt=menu,menuone
-"let OmniCpp_MayCompleteDot=1 "打开. 操作符
-"let OmniCpp_MayCompleteArrow=1
-"let OmniCpp_MayCompleteScope=1
-"let OmniCpp_SelectFirstItem=2 "自动弹出时自动跳至第一个
+" Bundle "xavierd/clang_complete"
+
+" Bundle 'OmniCppComplete'
+" set completeopt=menu,menuone
+" let OmniCpp_MayCompleteDot=1 "打开. 操作符
+" let OmniCpp_MayCompleteArrow=1 "打开->操作符
+" let OmniCpp_MayCompleteScope=1 "打开::操作符
+" let OmniCpp_NamespaceSearch=1 "命名空间搜索
+" let OmniCpp_ShowPrototypeInAbbr=1 "显示函数原型
+" let OmniCpp_SelectFirstItem=2 "自动弹出时自动跳至第一个
 
 
 Bundle "Mark--Karkat"
@@ -98,7 +102,12 @@ Bundle "tpope/vim-surround"
 Bundle 'ervandew/supertab'
 
 " can't use brew python, macvim signal ABRT
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'ycm-core/YouCompleteMe'
+" https://github.com/ycm-core/YouCompleteMe#macos
+" cd ~/.vim/bundle/YouCompleteMe
+" python3 install.py --clang-completer
+" let g:ycm_use_clangd = 0
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " YCM 补全菜单配色
 " 菜单
 " highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
@@ -141,7 +150,7 @@ Bundle 'godlygeek/tabular'
 " Bundle 'plasticboy/vim-markdown'
 Bundle 'suan/vim-instant-markdown'
 
-Bundle 'shawncplus/phpcomplete.vim'
+" Bundle 'shawncplus/phpcomplete.vim'
 
 Bundle 'The-NERD-tree'
 noremap <leader>d :NERDTreeToggle<CR>
