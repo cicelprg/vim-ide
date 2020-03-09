@@ -6,7 +6,7 @@ vim ide, support c++, python, golang
 1. clone vim-ide
 ```
 git clone git@github.com:cicelprg/vim-ide.git
-cd vim-ide && cp -r .vimrc .vim i ~/
+cd vim-ide && cp -r .vimrc .vim  ~/
 ```
 
 2. install vundle
@@ -22,6 +22,11 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 4. install YCM, Reference: https://github.com/ycm-core/YouCompleteMe
 ```
 cd ~/.vim/bundle/YouCompleteMe/ && ./install.py --clangd-completer --go-completer
+```
+
+5. install go binaries
+```
+:GoInstallBinaries
 ```
 
 # Effect
