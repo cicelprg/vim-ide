@@ -21,6 +21,9 @@ Bundle 'gmarik/vundle'
 
 Bundle 'dbext.vim'
 
+" https://github.com/fatih/vim-go
+Bundle 'fatih/vim-go'
+
 " Bundle 'kien/ctrlp.vim'
 " let g:ctrlp_map = '<c-p>'
 " let g:ctrlp_cmd = 'CtrlP'
@@ -102,10 +105,8 @@ Bundle "tpope/vim-surround"
 Bundle 'ervandew/supertab'
 
 " can't use brew python, macvim signal ABRT
+" ./install.py --clangd-completer --go-completer
 Bundle 'ycm-core/YouCompleteMe'
-" https://github.com/ycm-core/YouCompleteMe#macos
-" cd ~/.vim/bundle/YouCompleteMe
-" python3 install.py --clang-completer
 " let g:ycm_use_clangd = 0
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " YCM 补全菜单配色
