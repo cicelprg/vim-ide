@@ -109,6 +109,8 @@ Bundle 'ervandew/supertab'
 Bundle 'ycm-core/YouCompleteMe'
 " let g:ycm_use_clangd = 0
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+"使用系统的 gopls 工具
+let g:ycm_gopls_binary_path = "gopls"
 " YCM 补全菜单配色
 " 菜单
 " highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
